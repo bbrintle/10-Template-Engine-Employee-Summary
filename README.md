@@ -20,7 +20,7 @@ app.js file must be ran using node.js
 ## 3. Usage
 Select the role of the employee (Manager, Engineer or Intern) and then answer the follwing questions about the employee. Continue this until you no longer have any employees let to enter. Once no more employees remain, select "No more team members". The team.html file within the 'output' folder will update with all of the members entered.
 <br>
-<img src="./ScreenShot.PNG">
+<img src="./image/ScreenShot.PNG">
 
     
 <a name="lic"></a>
