@@ -5,18 +5,15 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 const util = require("util");
+const render = require("./lib/htmlRenderer.js");
 
 const writeFileAsync = util.promisify(fs.writeFile);
-
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
-const render = require("./lib/htmlRenderer.js");
-
+const employees = [];
 let userId = 1;
 let html;
-const employees = [];
-
 
 function createHtmlFile(html){
     writeFileAsync(outputPath, html);
