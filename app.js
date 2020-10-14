@@ -87,7 +87,7 @@ function askForInternInfo(){
         {
             type: "input",
             name: "internSchool",
-            message: "Where does they go to school?",
+            message: "Where do they go to school?",
         }
     ]).then(response => {
         const newIntern = new Intern(response.internName, userId, response.internEmail, response.internSchool);
@@ -107,7 +107,7 @@ function askForNewTeamMember(){
                 "Manager",
                 "Engineer",
                 "Intern",
-                "No more team members",
+                "No more team members.",
             ]
         }
     ]).then(response => {
@@ -123,24 +123,11 @@ function askForNewTeamMember(){
             askForInternInfo();
         }
 
-        if(response.response === "No more team members"){
+        if(response.response === "No more team members."){
             html = render(employees);
             createHtmlFile(html);
         }
     });
 }
-
-// function askForNewManager(){
-//     inquirer.prompt([
-//         {
-//             type: "confirm",
-//             name: "response",
-//             message: "Do you have a Manager you would like to add?"
-//         }
-//     ])
-//     .then(response => {
-//         if(response.response) { askForManagerInfo() };
-//     });
-// }
 
 askForNewTeamMember();
